@@ -1,10 +1,23 @@
 .container {
-  min-width: 120rem;
+  // min-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
 
-  min-height: 50rem;
+  max-width: 140rem;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    // min-height: 100vh;
+    // margin: 0;
+  }
 }
 
 .header {
@@ -16,24 +29,56 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding-top: 1.1rem;
+    padding-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+    padding-bottom: 0;
+  }
 }
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-large) {
+    flex: 1;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-
   flex: 0 0 18%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 6rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex: 0 0 7rem;
+  }
 }
 
 .hotel-view {
   background-color: #ffffff;
   flex: 1;
+
+  @media only screen and (max-width: $bp-large) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .detail {
@@ -42,6 +87,24 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
   font-size: 1.4rem;
+  flex: 1;
+
+  @media only screen and (max-width: $bp-large) {
+    flex: 1;
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    padding: 2rem;
+  }
 }
 
 .description {
@@ -50,7 +113,29 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
-  font-size: inherit;
+
+  @media only screen and (max-width: $bp-largest) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-bottom: 2rem;
+  }
 }
 
 .user-reviews {
@@ -58,4 +143,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: $bp-large) {
+    flex-flow: column wrap;
+    justify-content: flex-start;
+  }
 }
